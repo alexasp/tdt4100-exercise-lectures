@@ -62,5 +62,14 @@ public class NotificationsTest extends TestCase {
 		assertEquals("The total number of notifications was not correct.", 3, notifications.totalNotifications());
 	}
 
-
+	@JExercise(
+			tests="String toString()",
+			description="Prints a summary of the notifications, in this format:  *X notifications in total. Y new emails, Z new contact requests.*")
+	public void testToString() {
+		notifications.newEmails = 2;
+		notifications.contactRequests = 1;
+		assertEquals("The summary was not correct.", "3 notifications in total. 2 new emails, 1 new contact requests.", notifications.toString().trim());
+	}
+	
+	
 }

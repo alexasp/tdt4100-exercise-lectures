@@ -14,9 +14,11 @@ public class Notifications {
 		contactRequests = 0;
 		newEmails = 0;
 	}
+	
 	public void addEmail() {
 		newEmails = newEmails + 1;
 	}
+	
 	public void addContactRequest() {
 		contactRequests += 1;
 	}
@@ -24,6 +26,14 @@ public class Notifications {
 	public int totalNotifications() {
 		return contactRequests + newEmails;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%d notifications in total."
+				+ " %d new emails, %d new contact requests.", totalNotifications(), newEmails, contactRequests);
+	}
+	
+	
 	
 
 }
