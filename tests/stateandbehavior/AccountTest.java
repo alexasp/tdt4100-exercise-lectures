@@ -116,7 +116,7 @@ public class AccountTest extends TestCase {
 	      
 	      it.interestRate = 5.0;
 	      } catch (junit.framework.AssertionFailedError error) {
-	      fail("deposit(-50) failed: " + error.getMessage());
+	      fail("setting interestRate = 5.0 failed: " + error.getMessage());
 	    }
     
   }
