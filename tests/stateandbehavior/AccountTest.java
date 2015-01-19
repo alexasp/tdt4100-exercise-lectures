@@ -1,4 +1,4 @@
-package exercise_lectures;
+package stateandbehavior;
 
 
 import junit.framework.TestCase;
