@@ -1,7 +1,8 @@
-package exercise_lectures;
+package notifications;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
+import notifications.Notifications;
 
 @JExercise(
 		description="The Notifications object keeps track of the current number of notifications.",

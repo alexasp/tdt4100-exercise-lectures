@@ -1,4 +1,4 @@
-package exercise_lectures;
+package notifications;
 
 public class Notifications {
 
