@@ -12,23 +12,23 @@ sequence constructor "Konstruktør" {
 }
 
 sequence removePieces "Fjerning av brikker" {
-	"Fjerner brikker" -- removePieces(1, 1), removePieces(2, 2), removePieces(3, 3) -->
+	"Fjerner brikker" -- removePieces(3, 1), removePieces(2, 2), removePieces(1, 3) -->
 	state {
-		getPile(1) == 4;
+		getPile(1) == 2;
 		getPile(2) == 3;
-		getPile(3) == 2;
+		getPile(3) == 4;
 	}
 	"Fjerner negativt antall" -- removePieces(-1, 1) -->
 	state {
-		getPile(1) == 4;
+		getPile(1) == 2;
 	}
 	"Fjerner for få brikker" -- removePieces(0, 1) -->
 	state {
-		getPile(1) == 4;
+		getPile(1) == 2;
 	}
 	"Fjerner for mange brikker" -- removePieces(6, 1) -->
 	state {
-		getPile(1) == 4; 
+		getPile(1) == 2; 
 	}
 }
 

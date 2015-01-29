@@ -16,7 +16,7 @@ public class Nim {
 	
 	public void removePieces(int number, int targetPile){
 		if(isValidMove(number, targetPile)){
-			piles[targetPile-1] += number;
+			piles[targetPile-1] -= number;
 		}
 	}
 
