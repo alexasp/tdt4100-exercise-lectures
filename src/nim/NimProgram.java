@@ -12,11 +12,16 @@ public class NimProgram {
 		
 		while(scanner.hasNextLine()){
 			String input = scanner.nextLine();
-			String[] split = input.split(" ");
+			String[] split = input.split(" fra ");
 			int number = Integer.valueOf(split[0]);
 			int targetPile = Integer.valueOf(split[1]);
 			
-			game.removeStones(number, targetPile);
+			if(game.isLegalMove(number, targetPile)){
+				game.removeStones(number, targetPile);
+			}
+			else{
+				System.out.println("Ugyldig trekk.");
+			}
 			
 			System.out.println(game.toString());
 		}

@@ -2,7 +2,7 @@ package nim;
 
 public class ThreeNim {
 
-	int[] piles = new int[3];
+	private int[] piles = new int[3];
 	
 	public ThreeNim(){
 		this(10);
@@ -15,7 +15,20 @@ public class ThreeNim {
 	}
 	
 	public void removeStones(int number, int targetPile){
-		piles[targetPile-1] -= number;
+		if(isLegalMove(number, targetPile)){
+			piles[targetPile-1] -= number;
+		}
+		else{
+			throw new IllegalArgumentException();
+		}
+	}
+
+	public boolean isLegalMove(int number, int targetPile){
+		return piles[targetPile-1] - number >= 0;
+	}
+
+	private boolean gameOver() {
+		return piles[0] == 0 || piles[1] == 0 || piles[2] == 0;
 	}
 
 	@Override
