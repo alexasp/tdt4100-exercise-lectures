@@ -1,21 +1,21 @@
-package stateandbehavior;
+package programs;
 
 public class Account {
 
-	double balance;
-	double interestRate;
+	public double balance;
+	public double interestRate;
 	
 	public String toString() {
 		return String.format("[Account balance=%f interestRate=%f", balance, interestRate);
 	}
 	
-	void deposit(double amount) {
+	public void deposit(double amount) {
 		if (amount > 0) {
 			balance = balance + amount;
 		}
 	}
 	
-	void addInterest() {
+	public void addInterest() {
 		deposit(balance * interestRate / 100);		
 	}
 }

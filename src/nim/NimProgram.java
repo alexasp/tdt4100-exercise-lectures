@@ -11,7 +11,26 @@ public class NimProgram {
 		System.out.println(game.toString());
 		
 		while(scanner.hasNextLine()){
+			
+			
 			String input = scanner.nextLine();
+			
+			
+			if(input.equals("fjern")){
+				System.out.println("Hvor mange?");
+				int antall = scanner.nextInt();
+				
+				System.out.println("Fra hvilken?");
+				int targetPile = scanner.nextInt();
+				
+				if(game.isLegalMove(antall, targetPile)){
+					game.removeStones(antall, targetPile);
+				}
+				else{
+					System.out.println("Ulovlig trekk.");
+				}
+			}
+			
 			String[] split = input.split(" fra ");
 			int number = Integer.valueOf(split[0]);
 			int targetPile = Integer.valueOf(split[1]);

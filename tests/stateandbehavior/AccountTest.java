@@ -1,8 +1,8 @@
 package stateandbehavior;
 
+import programs.Account;
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import stateandbehavior.Account;
 
 @JExercise(description = "Tests stateandbehavior.Account")
 @SuppressWarnings("all")
