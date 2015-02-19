@@ -2,13 +2,20 @@ package programs;
 
 public class CellStructure {
 
-	public Cell getCell(int row, int column){
-		return this.cells.get(row*width + column);
+	public CellStructure(int rows, int columns) {
+		// TODO Auto-generated constructor stub
 	}
-	
 
-	public void setCell(Cell cell, int row, int column){
-		this.cells.set(row*width + column, cell);
+
+	public Cell get(int row, int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void set(int row, int column, Cell cell) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
