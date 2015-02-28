@@ -1,41 +1,35 @@
 package programs;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class AccountProgram {
 
 	public static void main(String[] args){
 		
-		Scanner scanner = new Scanner(System.in);
-		Account account = new Account();
+		Account poorAccount = new Account();
+		poorAccount.setBalance(0);
 		
-		System.out.println("Velkommen! Legg til med deposit, sett rente med setInterest, addInterest, sjekk balanse med balance.");
+		Account mediumAccount = new Account();
+		mediumAccount.setBalance(500);
 		
-		while(scanner.hasNextLine()){
-			
-			String[] input = scanner.nextLine().split(" ");
-			
-			
-			if(input[0].equals("exit")){
-				
-			}
-			if(input[0].equals("deposit")){
-				int amount = Integer.valueOf(input[1]);
-				account.deposit(amount);
-			}
-			else if(input[0].equals("setInterest")){
-				int interest = Integer.valueOf(input[1]);
-				account.interestRate = interest;
-			}
-			else if(input[0].equals("addInterest")){
-				account.addInterest();
-			}
-			else if(input[0].equals("balance")){
-				System.out.println("Balansen er " + account.balance);
-			}
-			
-		}
+		Account richAccount = new Account();
+		richAccount.setBalance(10000);
 		
+		
+		List<Account> accounts = new ArrayList<Account>();
+		
+		accounts.add(poorAccount);
+		accounts.add(richAccount);
+		accounts.add(mediumAccount);
+		
+		Collections.sort(accounts);
+
+		int result = poorAccount.compareTo(richAccount);
+		
+		System.out.println(result);
 	}
 	
 	
