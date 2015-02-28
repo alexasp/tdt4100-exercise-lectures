@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NimProgram {
 
 	public static void main(String[] args) {
-		ThreeNim game = new ThreeNim(5);
+		Nim game = new Nim(5);
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println(game.toString());
@@ -23,8 +23,8 @@ public class NimProgram {
 				System.out.println("Fra hvilken?");
 				int targetPile = scanner.nextInt();
 				
-				if(game.isLegalMove(antall, targetPile)){
-					game.removeStones(antall, targetPile);
+				if(game.isValidMove(antall, targetPile)){
+					game.removePieces(antall, targetPile);
 				}
 				else{
 					System.out.println("Ulovlig trekk.");
@@ -35,14 +35,20 @@ public class NimProgram {
 			int number = Integer.valueOf(split[0]);
 			int targetPile = Integer.valueOf(split[1]);
 			
-			if(game.isLegalMove(number, targetPile)){
-				game.removeStones(number, targetPile);
+			if(game.isValidMove(number, targetPile)){
+				game.removePieces(number, targetPile);
 			}
 			else{
 				System.out.println("Ugyldig trekk.");
 			}
 			
 			System.out.println(game.toString());
+			
+			
+			if(game.isGameOver()){
+				System.out.println("Game over!");
+				break;
+			}
 		}
 		
 		scanner.close();

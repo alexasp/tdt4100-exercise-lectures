@@ -2,14 +2,14 @@ package nim;
 
 public class Nim {
 
-	private Pile[] piles;
+	private int[] piles;
 	
 	public Nim() {
 		this(10);
 	}	
 	
 	public Nim(int pileSize) {
-		piles = new Pile[]{new Pile(pileSize), new Pile(pileSize), new Pile(pileSize)};
+		piles = new int[]{pileSize, pileSize, pileSize};
 	}
 	
 	@Override
@@ -21,19 +21,24 @@ public class Nim {
 		if (isGameOver()) {
 			throw new IllegalStateException("Cannot remove pieces when game is over");
 		}
-	
-		piles[targetPile].removePieces(number);
+		if (number <= 0) {
+			throw new IllegalArgumentException("Number must be greater than zero");
+		}
+		if (number > piles[targetPile]) {
+			throw new IllegalArgumentException("Number cannot be greater than the pile (size)");
+		}
+		piles[targetPile] -= number;
 	}
 
 	public boolean isValidMove(int number, int targetPile) {
-		return piles[targetPile].isValidMove(number);
+		return number > 0 && piles[targetPile] >= number && (! isGameOver());
 	}
 
 	public boolean isGameOver() {
-		return piles[0].getNumber() == 0 || piles[1].getNumber() == 0 || piles[2].getNumber() == 0;
+		return piles[0] == 0 || piles[1] == 0 || piles[2] == 0;
 	}
 
-	public int getPileCount(int targetPile) {
-		return piles[targetPile].getNumber();
+	public int getPile(int targetPile) {
+		return piles[targetPile];
 	}
 }
