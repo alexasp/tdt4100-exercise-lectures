@@ -1,4 +1,4 @@
-package programs;
+package exerciselecture.comparable;
 
 public class Account implements Comparable<Account>{
 
