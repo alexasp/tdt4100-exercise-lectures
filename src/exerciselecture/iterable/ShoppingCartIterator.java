@@ -1,6 +1,8 @@
-package programs;
+package exerciselecture.iterable;
 
 import java.util.Iterator;
+
+import programs.Item;
 
 public class ShoppingCartIterator implements Iterator<Item> {
 
@@ -13,7 +15,7 @@ public class ShoppingCartIterator implements Iterator<Item> {
 	
 	@Override
 	public boolean hasNext() {
-		return index <= this.cart.cartSize() - 1;
+		return index < this.cart.cartSize();
 	}
 
 	@Override

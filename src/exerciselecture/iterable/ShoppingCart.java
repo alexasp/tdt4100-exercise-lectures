@@ -1,8 +1,10 @@
-package programs;
+package exerciselecture.iterable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import programs.Item;
 
 public class ShoppingCart implements Iterable<Item> {
 
@@ -24,5 +26,6 @@ public class ShoppingCart implements Iterable<Item> {
 	public Iterator<Item> iterator() {
 		return new ShoppingCartIterator(this);
 	}
+
 	
 }
