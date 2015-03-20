@@ -17,4 +17,10 @@ public class SuperFormatPersistence implements IStatePersistence{
 		return null;
 	}
 
+	public boolean isSuper(String uri){
+		//.. kode som sjekker om filen på uri er av Super-format
+		
+		return false;
+	}
+	
 }

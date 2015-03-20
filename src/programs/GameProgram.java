@@ -6,8 +6,6 @@ public class GameProgram {
 		
 		Board board = new Board(10, 10);
 		
-		
-		
 	}
 	
 }

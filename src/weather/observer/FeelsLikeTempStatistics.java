@@ -1,20 +1,11 @@
-package observer;
+package weather.observer;
 
-public class FeelsLikeTempStatistics implements WindListener, TempListener{
+public class FeelsLikeTempStatistics {
 
 	private double currentTemp;
 	private double currentWindSpeed;
 
-	@Override
-	public void notifyTempChanged(double temp) {
-		currentTemp = temp;
-	}
 
-	@Override
-	public void notifyWindChanged(double dx, double dy) {
-		currentWindSpeed = Math.sqrt(dx*dx + dy*dy);
-	}
-	
 	public double getFeelsLikeTemp(){
 		return 13.12 + 0.6125*currentTemp - 11.37*Math.pow(currentWindSpeed,0.16) + 0.3965*currentTemp*Math.pow(currentWindSpeed,0.16);
 	}

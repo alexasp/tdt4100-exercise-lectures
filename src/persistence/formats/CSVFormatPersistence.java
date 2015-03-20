@@ -16,5 +16,12 @@ public class CSVFormatPersistence implements IStatePersistence{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	public boolean isCsv(String uri){
+		//.. kode som sjekker om filen på uri er av CSV-format
+		
+		return false;
+	}
 
 }

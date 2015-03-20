@@ -1,4 +1,4 @@
-package observer;
+package weather.observer;
 
 import java.awt.event.WindowStateListener;
 import java.io.FileInputStream;
@@ -15,19 +15,13 @@ public class WeatherProgram {
 			
 			WeatherStreamReader weatherReader = new WeatherStreamReader(stream);
 			
-			TempStatistics tempStats = new TempStatistics();
-			FeelsLikeTempStatistics feelsLikeStates = new FeelsLikeTempStatistics();
+			//set up listening objects
 			
-			weatherReader.addTempListener(tempStats);
-			
-			weatherReader.addTempListener(feelsLikeStates);
-			weatherReader.addWindListener(feelsLikeStates);
+			//register listening objects
 	
 			weatherReader.startReading();
 			
-			System.out.println(tempStats.toString());
-			
-			System.out.println(feelsLikeStates.toString());
+			//check states
 		}
 		
 	}
