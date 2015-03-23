@@ -1,4 +1,6 @@
-package weather.delegation;
+package weather.delegation.events;
+
+import weather.delegation.WeatherEvent;
 
 public class WindEvent implements WeatherEvent {
 

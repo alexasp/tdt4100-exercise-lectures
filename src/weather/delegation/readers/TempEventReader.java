@@ -1,4 +1,7 @@
-package weather.delegation;
+package weather.delegation.readers;
+
+import weather.delegation.WeatherEvent;
+import weather.delegation.events.TempEvent;
 
 public class TempEventReader {
 
