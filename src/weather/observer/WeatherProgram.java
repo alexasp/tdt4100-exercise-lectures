@@ -15,13 +15,19 @@ public class WeatherProgram {
 			
 			WeatherStreamReader weatherReader = new WeatherStreamReader(stream);
 			
-			//set up listening objects
+			TempStatistics tempStats = new TempStatistics();
+			FeelsLikeTempStatistics feelsLikeStats = new FeelsLikeTempStatistics();
 			
 			//register listening objects
-	
+			weatherReader.addTempListener(tempStats);
+			weatherReader.addTempListener(feelsLikeStats);
+			weatherReader.addWindListener(feelsLikeStats);
+			
 			weatherReader.startReading();
 			
 			//check states
+			System.out.println(tempStats.toString());
+			System.out.println(feelsLikeStats.toString());
 		}
 		
 	}

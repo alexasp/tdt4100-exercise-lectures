@@ -1,6 +1,6 @@
 package weather.observer;
 
-public class FeelsLikeTempStatistics {
+public class FeelsLikeTempStatistics implements WindListener, TempListener {
 
 	private double currentTemp;
 	private double currentWindSpeed;
@@ -13,6 +13,16 @@ public class FeelsLikeTempStatistics {
 	@Override
 	public String toString() {
 		return String.format("Temperaturen ute føles nå som %f.", getFeelsLikeTemp());
+	}
+
+	@Override
+	public void notifyWindChanged(double dx, double dy) {
+		currentWindSpeed = Math.sqrt(dx*dx + dy*dy); //magnitude of wind
+	}
+
+	@Override
+	public void notifyTempChanged(double temp) {
+		currentTemp = temp;
 	}
 
 	

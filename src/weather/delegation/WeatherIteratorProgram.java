@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import observer.FeelsLikeTempStatistics;
-import observer.TempStatistics;
-import observer.WeatherStreamReader;
 
 public class WeatherIteratorProgram {
 
